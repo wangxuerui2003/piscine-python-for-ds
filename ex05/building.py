@@ -54,8 +54,10 @@ def main():
     string = ''
     if len(sys.argv) < 2:
         try:
-            string = input("What is the text to count?\n") + '\r'
+            print("What is the text to count?")
+            string = sys.stdin.readline()
         except EOFError:
+            print("eof")
             pass
     else:
         string = sys.argv[1]
