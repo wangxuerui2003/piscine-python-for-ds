@@ -54,7 +54,7 @@ def main():
     string = ''
     if len(sys.argv) < 2:
         try:
-            string = input("What is the text to count?\n")
+            string = input("What is the text to count?\n") + '\r'
         except EOFError:
             pass
     else:
