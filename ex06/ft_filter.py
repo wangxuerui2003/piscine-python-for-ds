@@ -1,6 +1,8 @@
-def ft_filter(func, words) -> list[str]:
+def ft_filter(func, lst) -> list[str]:
     """
-        Returns a list of words which satisfies the func
+        Returns a list of lst which satisfies the func
     """
 
-    return [word for word in words if func(word)]
+    if func is None:
+        return [item for item in lst if item]
+    return [item for item in lst if func(item)]
