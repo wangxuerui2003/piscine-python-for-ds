@@ -4,11 +4,11 @@ def all_thing_is_obj(object: any) -> int:
 	
 	if obj_type_name == 'str':
 		print(f'{object} is in the kitchen : {obj_type}')
-		return 0
+		return 42
 	
 	if obj_type_name in ['list', 'dict', 'set', 'tuple']:
 		print(f'{obj_type_name.title()} : {obj_type}')
-		return 0
+		return 42
 
 	print('Type not found')
 	return 42
