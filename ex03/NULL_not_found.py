@@ -1,12 +1,10 @@
-from math import isnan
-
 def NULL_not_found(object: any) -> int:
 	obj_type = type(object)
 
 	if object is None:
 		print(f"Nothing: {object} {obj_type}")
 		return 0
-	elif obj_type == float and isnan(object):
+	elif obj_type == float and str(object) == 'nan':
 		print(f"Cheese: {object} {obj_type}")
 		return 0
 	elif obj_type == int and object == 0:
