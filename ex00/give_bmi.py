@@ -12,9 +12,17 @@ def give_bmi(height: list[int | float],
         print("Height List must contain only int or float!")
         return []
 
+    if not np.all(height_arr > 0):
+        print("Height List must contain only positive numbers!")
+        return []
+
     weight_arr = np.array(weight)
     if not (weight_arr.dtype == int or weight_arr.dtype == float):
         print("Weight List must contain only int or float!")
+        return []
+
+    if not np.all(weight_arr > 0):
+        print("Weight List must contain only positive numbers!")
         return []
 
     if not height_arr.ndim == weight_arr.ndim == 1:
