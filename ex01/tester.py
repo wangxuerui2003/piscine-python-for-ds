@@ -27,6 +27,8 @@ print(slice_me(family, 0, 1))
 print()
 family = [1, 2, 3]
 print(slice_me(family, 0, 1))
+family = [[[1, 2, 3], [4, 5, 6]]]
+print(slice_me(family, 0, 1))
 
 
 """ invalid slicing index """
