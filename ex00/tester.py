@@ -10,38 +10,25 @@ def main():
     print(bmi, type(bmi))
     print(apply_limit(bmi, 26))
 
-    """ Different size test """
+    """ give_bmi different size test """
     print()
     height = [1.75, 1.80, 1.85]
     weight = [123, 123]
-    try:
-        bmi = give_bmi(height, weight)
-        print(bmi, type(bmi))
-        print(apply_limit(bmi, 26))
-    except ValueError as e:
-        print(e)
+    give_bmi(height, weight)
 
     """ Invalid data type test """
     print()
     height = [1.75, 1.80, 'abc']
     weight = [123, 123, 123]
-    try:
-        bmi = give_bmi(height, weight)
-        print(bmi, type(bmi))
-        print(apply_limit(bmi, 26))
-    except ValueError as e:
-        print(e)
+    give_bmi(height, weight)
+    apply_limit(['a', 'b'], 26)
 
     """ Dimension too high test """
     print()
     height = [[1.75, 1.80], [1.70, 1.85]]
     weight = [123, 123]
-    try:
-        bmi = give_bmi(height, weight)
-        print(bmi, type(bmi))
-        print(apply_limit(bmi, 26))
-    except ValueError as e:
-        print(e)
+    give_bmi(height, weight)
+    apply_limit([[1, 2], [3, 4]], 26)
 
 
 if __name__ == '__main__':

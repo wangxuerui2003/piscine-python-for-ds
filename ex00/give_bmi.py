@@ -9,17 +9,21 @@ def give_bmi(height: list[int | float],
 
     height_arr = np.array(height)
     if not (height_arr.dtype == int or height_arr.dtype == float):
-        raise ValueError("Height List must contain only int or float!")
+        print("Height List must contain only int or float!")
+        return []
 
     weight_arr = np.array(weight)
     if not (weight_arr.dtype == int or weight_arr.dtype == float):
-        raise ValueError("Weight List must contain only int or float!")
+        print("Weight List must contain only int or float!")
+        return []
 
     if not height_arr.ndim == weight_arr.ndim == 1:
-        raise ValueError("Height and Weight list must be 1D lists!")
+        print("Height and Weight list must be 1D lists!")
+        return []
 
     if not height_arr.shape == weight_arr.shape:
-        raise ValueError("Height and Weight List must have same size!")
+        print("Height and Weight List must have same size!")
+        return []
 
     height_arr *= height_arr
     bmi_arr = weight_arr / height_arr
@@ -31,4 +35,14 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         Return a list of bool represents if the bmi is over the limit
     """
 
-    return [bmi_value > limit for bmi_value in bmi]
+    bmi_arr = np.array(bmi)
+    if not (bmi_arr.dtype == int or bmi_arr.dtype == float):
+        print("bmi list must contain only int or float!")
+        return []
+
+    if not bmi_arr.ndim == 1:
+        print("bmi list must be 1D lists!")
+        return []
+
+    bool_arr = bmi_arr > limit
+    return bool_arr.tolist()
