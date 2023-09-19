@@ -57,7 +57,6 @@ def main():
             print("What is the text to count?")
             string = sys.stdin.readline()
         except EOFError:
-            print("eof")
             pass
     else:
         string = sys.argv[1]
