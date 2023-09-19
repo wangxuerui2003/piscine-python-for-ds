@@ -57,7 +57,7 @@ def main():
         for i in range(len(string)):
             morse_code = NESTED_MORSE[string[i].upper()]
             if i == len(string) - 1:
-                print(morse_code.strip())
+                print(morse_code.rstrip())
             else:
                 print(morse_code, end='')
 
