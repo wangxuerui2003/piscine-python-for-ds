@@ -7,6 +7,10 @@ def give_bmi(height: list[int | float],
         Return a list of bmi by inputting a list of height and weight
     """
 
+    if not (isinstance(height, list) and isinstance(weight, list)):
+        print("Both height and weight parameter has to be lists!")
+        return []
+
     height_arr = np.array(height)
     if not (height_arr.dtype == int or height_arr.dtype == float):
         print("Height List must contain only int or float!")
@@ -42,6 +46,10 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """
         Return a list of bool represents if the bmi is over the limit
     """
+
+    if not isinstance(bmi, list):
+        print("bmi parameter must be a list!")
+        return []
 
     bmi_arr = np.array(bmi)
     if not (bmi_arr.dtype == int or bmi_arr.dtype == float):
