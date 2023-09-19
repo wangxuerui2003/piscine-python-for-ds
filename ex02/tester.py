@@ -10,4 +10,4 @@ print(ft_load("../mario.png"))
 """ Invalid path"""
 print(ft_load("../notexist.png"))
 print(ft_load("tester.py"))
-print(ft_load("../mario.png"))
+print(ft_load(123))
