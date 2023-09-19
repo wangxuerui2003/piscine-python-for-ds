@@ -3,10 +3,9 @@ def ft_tqdm(lst: range) -> None:
         Print the progress bar by inputting a range object
     """
 
-    stop = lst.stop - lst.start
+    stop = len(lst)
     percentage = 0
-    for i in lst:
-        i -= lst.start
+    for i in range(stop):
         percentage = int(round(i / stop, 2) * 100)
         p_bar = '=' * percentage + '>'
         p_bar = p_bar + (' ' * (100 - percentage))
