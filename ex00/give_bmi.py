@@ -15,7 +15,7 @@ def give_bmi(height: list[int | float],
     if not (weight_arr.dtype == int or weight_arr.dtype == float):
         raise ValueError("Weight List must contain only int or float!")
 
-    if not len(height_arr.shape) == len(weight_arr.shape) == 1:
+    if not height_arr.ndim == weight_arr.ndim == 1:
         raise ValueError("Height and Weight list must be 1D lists!")
 
     if not height_arr.shape == weight_arr.shape:
