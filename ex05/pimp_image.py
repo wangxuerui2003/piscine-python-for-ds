@@ -19,7 +19,7 @@ def ft_invert(array: np.ndarray) -> np.ndarray:
 
     print("The shape of image is:", array.shape)
     copy = array.copy()
-    copy[:, :, :] = 255 - copy[:, :, :]
+    copy = 255 - copy
     print(copy)
     print("The shape of image after filter is:", copy.shape)
     return copy
@@ -30,8 +30,7 @@ def ft_red(array: np.ndarray) -> np.ndarray:
 
     print("The shape of image is:", array.shape)
     copy = array.copy()
-    copy[:, :, 1] = 0  # ignore green channel
-    copy[:, :, 2] = 0  # ignore blue channel
+    copy[:, :, [1, 2]] = 0  # ignore green and blue channel
     print(copy)
     print("The shape of image after filter is:", copy.shape)
     return copy
@@ -42,8 +41,7 @@ def ft_green(array: np.ndarray) -> np.ndarray:
 
     print("The shape of image is:", array.shape)
     copy = array.copy()
-    copy[:, :, 0] = 0  # ignore red channel
-    copy[:, :, 2] = 0  # ignore blue channel
+    copy[:, :, [0, 2]] = 0  # ignore red and blue channel
     print(copy)
     print("The shape of image after filter is:", copy.shape)
     return copy
@@ -54,8 +52,7 @@ def ft_blue(array: np.ndarray) -> np.ndarray:
 
     print("The shape of image is:", array.shape)
     copy = array.copy()
-    copy[:, :, 0] = 0  # ignore red channel
-    copy[:, :, 1] = 0  # ignore green channel
+    copy[:, :, [0, 1]] = 0  # ignore red and green channel
     print(copy)
     print("The shape of image after filter is:", copy.shape)
     return copy
@@ -72,7 +69,7 @@ def ft_grey(array: np.ndarray) -> np.ndarray:
     copy = array.copy()
 
     # add an empty 3rd axis to perform the assignment
-    copy[:, :, :3] = average[:, :, np.newaxis]
+    copy[:, :, :] = average[:, :, np.newaxis]
 
     print(copy)
     print("The shape of image after filter is:", copy.shape)
