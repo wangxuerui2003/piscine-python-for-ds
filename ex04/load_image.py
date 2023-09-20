@@ -20,13 +20,6 @@ def ft_load(path: str) -> np.ndarray:
     try:
         img = Image.open(path)
         img_arr = np.array(img)
-
-        # print("The shape of the image is:", img_arr.shape, end='')
-        # if img_arr.ndim == 3 and img_arr.shape[2] == 1:
-        #     print(f" or {img_arr.shape[0:2]}")
-        # else:
-        #     print()
-
         return img_arr
     except FileNotFoundError:
         print("Invalid path!")
