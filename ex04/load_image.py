@@ -1,5 +1,5 @@
 import numpy as np
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 
 
 def ft_load(path: str) -> np.ndarray:
@@ -23,7 +23,7 @@ def ft_load(path: str) -> np.ndarray:
         return img_arr
     except FileNotFoundError:
         print("Invalid path!")
-    except ValueError:
+    except (ValueError, UnidentifiedImageError):
         print("Image file damaged!")
     except Exception as e:
         print("Error:", e)
