@@ -25,5 +25,9 @@ def ft_load(path: str) -> np.ndarray:
         return img_arr
     except FileNotFoundError:
         print("Invalid path!")
+    except ValueError:
+        print("Image file damaged!")
+    except Exception as e:
+        print("Error:", e)
 
     return np.empty(shape=[0])
