@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 
 def show_img(img_arr: np.ndarray, filename: str, extension='jpg'):
     """
+        Helper function.
         Use matplotlib to plot the image and save to filename.extension
     """
 
@@ -19,29 +20,33 @@ def show_img(img_arr: np.ndarray, filename: str, extension='jpg'):
     plt.savefig(f"{filename}.{extension}")
 
 
-""" Original image"""
-# img = Image.open('../landscape.jpg')
-# plt.imshow(img)
-# plt.savefig('original.jpg')
+IMAGE_PATH = '../landscape.jpg'
+EXTENSION = 'jpg'
 
-img_arr = ft_load('../landscape.jpg')
+""" Original image"""
+img = Image.open(IMAGE_PATH)
+plt.imshow(img)
+plt.savefig(f'original.{EXTENSION}')
+img.close()
+
+img_arr = ft_load(IMAGE_PATH)
 
 """ Red filter """
 red_arr = ft_red(img_arr)
-show_img(red_arr, 'red')
+show_img(red_arr, 'red', EXTENSION)
 
 """ Green filter """
 green_arr = ft_green(img_arr)
-show_img(green_arr, 'green')
+show_img(green_arr, 'green', EXTENSION)
 
 """ Blue filter """
 blue_arr = ft_blue(img_arr)
-show_img(blue_arr, 'blue')
+show_img(blue_arr, 'blue', EXTENSION)
 
 """ Invert filter """
 invert_arr = ft_invert(img_arr)
-show_img(invert_arr, 'invert')
+show_img(invert_arr, 'invert', EXTENSION)
 
 """ Grey filter """
 grey_arr = ft_grey(img_arr)
-show_img(grey_arr, 'grey')
+show_img(grey_arr, 'grey', EXTENSION)
