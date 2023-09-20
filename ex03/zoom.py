@@ -12,7 +12,7 @@ def ft_zoom(img_arr: np.ndarray, scale: float) -> np.ndarray:
     """
 
     if scale < 1:
-        raise ValueError("Scale should be greater than 1!")
+        raise ValueError("Scale should be greater or equal to 1!")
 
     scale = 1 / scale
 
@@ -20,9 +20,9 @@ def ft_zoom(img_arr: np.ndarray, scale: float) -> np.ndarray:
     height, width = img_arr.shape[0:2]
     size = min(height * scale, width * scale)
     vert_start = int((height - size) / 2)
-    vert_end = int(height - vert_start)
+    vert_end = height - vert_start
     hori_start = int((width - size) / 2)
-    hori_end = int(width - hori_start)
+    hori_end = width - hori_start
 
     img_arr = img_arr[vert_start:vert_end, hori_start:hori_end, 0:1]
     return img_arr
