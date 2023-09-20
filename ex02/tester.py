@@ -6,8 +6,7 @@ print(ft_load("../mario.png"))
 # print(ft_load("../doge.jpg"))
 # print(ft_load("../cat-meme.jpg"))
 
-""" Invalid path"""
-print(ft_load("../notexist.png"))
-print(ft_load("tester.py"))
-print(ft_load("tester.py.png"))
-print(ft_load(123))
+print('""" Invalid path"""')
+print(ft_load("../notexist.png"))  # not exist
+print(ft_load("tester.py"))  # invalid format/extension
+print(ft_load(123))  # invalid path datatype
