@@ -29,6 +29,13 @@ weight = [123, 123]
 give_bmi(height, weight)
 apply_limit([[1, 2], [3, 4]], 26)
 
+""" Not same size lists test """
+print()
+height = [[1.75, 1.80, 1], [1.70, 1.85]]
+weight = [123, 123]
+give_bmi(height, weight)
+apply_limit([[1, 2], [3, 4]], 26)
+
 """ Not a list test """
 print()
 height = 'a'
