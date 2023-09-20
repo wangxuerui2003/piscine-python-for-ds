@@ -3,17 +3,45 @@ from pimp_image import ft_green
 from pimp_image import ft_red
 from pimp_image import ft_invert
 from pimp_image import ft_grey
+from load_image import ft_load
 from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-img = Image.open('../landscape.jpg')
-plt.imshow(img)
-plt.savefig('original.jpg')
+def show_img(img_arr: np.ndarray, filename: str, extension='jpg'):
+    """
+        Use matplotlib to plot the image and save to filename.extension
+    """
 
-img_arr = np.array(img)
+    img = Image.fromarray(img_arr)
+    plt.imshow(img)
+    plt.savefig(f"{filename}.{extension}")
+
+
+""" Original image"""
+# img = Image.open('../landscape.jpg')
+# plt.imshow(img)
+# plt.savefig('original.jpg')
+
+img_arr = ft_load('../landscape.jpg')
+
+""" Red filter """
 red_arr = ft_red(img_arr)
-red_img = Image.fromarray(red_arr)
-plt.imshow(red_img)
-plt.savefig('red.jpg')
+show_img(red_arr, 'red')
+
+""" Green filter """
+green_arr = ft_green(img_arr)
+show_img(green_arr, 'green')
+
+""" Blue filter """
+blue_arr = ft_blue(img_arr)
+show_img(blue_arr, 'blue')
+
+""" Invert filter """
+invert_arr = ft_invert(img_arr)
+show_img(invert_arr, 'invert')
+
+""" Grey filter """
+grey_arr = ft_grey(img_arr)
+show_img(grey_arr, 'grey')
