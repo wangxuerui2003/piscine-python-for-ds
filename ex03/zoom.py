@@ -1,11 +1,11 @@
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 from load_image import ft_load
-import sys
 
 
-def ft_zoom(img_arr: np.ndarray, scale: float):
+def ft_zoom(img_arr: np.ndarray, scale: float) -> np.ndarray:
     """
         Zoom into the image by scale.
         Raise exception for error
@@ -24,17 +24,23 @@ def ft_zoom(img_arr: np.ndarray, scale: float):
     hori_start = int((width - size) / 2)
     hori_end = int(width - hori_start)
 
-    print(vert_start, vert_end, hori_start, hori_end)
-
     img_arr = img_arr[vert_start:vert_end, hori_start:hori_end, 0]
+    return img_arr
 
 
 def main():
+    """
+        Main function
+    """
+
     img = ft_load('../animal.jpeg')
     if img.size == 0:
         sys.exit()
 
-    ft_zoom(img, 2.0)
+    try:
+        img = ft_zoom(img, 0.5)
+    except ValueError as e:
+        print(e)
 
     img = Image.fromarray(img.squeeze())
     plt.imshow(img, cmap='gray')
