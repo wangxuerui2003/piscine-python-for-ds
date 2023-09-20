@@ -38,8 +38,7 @@ def give_bmi(height: list[int | float],
             print("Height and Weight List must have same size!")
             return []
 
-        height_arr *= height_arr
-        bmi_arr = weight_arr / height_arr
+        bmi_arr = weight_arr / (height_arr * height_arr)
         return bmi_arr.tolist()
     except ValueError:
         print("Invalid Height or Weight list!")
