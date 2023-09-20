@@ -24,7 +24,7 @@ def ft_zoom(img_arr: np.ndarray, scale: float) -> np.ndarray:
     hori_start = int((width - size) / 2)
     hori_end = int(width - hori_start)
 
-    img_arr = img_arr[vert_start:vert_end, hori_start:hori_end, 0]
+    img_arr = img_arr[vert_start:vert_end, hori_start:hori_end, 0:1]
     return img_arr
 
 
@@ -33,18 +33,23 @@ def main():
         Main function
     """
 
-    img = ft_load('../animal.jpeg')
-    if img.size == 0:
+    img_arr = ft_load('../animal.jpeg')
+    if img_arr.size == 0:
         sys.exit()
 
+    print(img_arr)
+
     try:
-        img = ft_zoom(img, 0.5)
+        img_arr = ft_zoom(img_arr, 1.92)
+        shape = img_arr.shape
+        print(f"New shape after slicing: {shape} or {shape[0:2]}")
+        print(img_arr)
+        img = Image.fromarray(img_arr.squeeze())
+        plt.imshow(img, cmap='gray')
+        plt.savefig('output.jpeg')
     except ValueError as e:
         print(e)
 
-    img = Image.fromarray(img.squeeze())
-    plt.imshow(img, cmap='gray')
-    plt.savefig('output.jpeg')
 
 
 if __name__ == '__main__':
