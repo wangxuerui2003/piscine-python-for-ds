@@ -1,6 +1,6 @@
 from array2D import slice_me
 
-""" Basic tests """
+print('""" Basic tests """')
 family = [[1.80, 78.4],
           [2.15, 102.7],
           [2.10, 98.5],
@@ -10,29 +10,29 @@ print(slice_me(family, 0, 2))
 print(slice_me(family, 1, -2))
 
 
-""" Not a list test """
 print()
+print('""" Not a list test """')
 family = 123
 print(slice_me(family, 0, 1))
 
 
-""" Lists not same size test """
 print()
+print('""" Lists not same size test """')
 family = [[1, 2],
           [1, 2, 3]]
 print(slice_me(family, 0, 1))
 
 
-""" family not 2d list test """
 print()
+print('""" family not 2d list test """')
 family = [1, 2, 3]
 print(slice_me(family, 0, 1))
 family = [[[1, 2, 3], [4, 5, 6]]]
 print(slice_me(family, 0, 1))
 
 
-""" invalid slicing index """
 print()
+print('""" invalid slicing index """')
 family = [[1.80, 78.4],
           [2.15, 102.7],
           [2.10, 98.5],
