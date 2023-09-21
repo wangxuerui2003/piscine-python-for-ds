@@ -2,6 +2,11 @@ import pandas as pd
 
 
 def load(path: str) -> pd.DataFrame:
+    """
+        Load a csv file into a pandas Dataframe.
+        Return an empty Dataframe if error.
+    """
+
     if not isinstance(path, str):
         print("Path must be a string!")
         return pd.DataFrame()  # df.empty == True
