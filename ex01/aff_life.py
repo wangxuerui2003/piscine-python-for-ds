@@ -8,7 +8,7 @@ def main():
         Main function
     """
 
-    df = load('life_expectancy_years.csv')
+    df = load('../life_expectancy_years.csv')
     if df.empty is True:
         sys.exit()
 
