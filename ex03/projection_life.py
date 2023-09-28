@@ -24,9 +24,9 @@ def main():
         plt.title("1900")
         plt.xlabel("Gross domestic product")
         plt.ylabel("Life Expectancy")
-        plt.xticks([300, 1000, 10000], ['300', '1k', '10k'])
         plt.xscale("log")  # to make the graph looks the same as pdf
         plt.scatter(income, le)
+        plt.xticks([300, 1000, 10000], ['300', '1k', '10k'])
 
         plt.savefig('output.jpg')
     except IndexError:

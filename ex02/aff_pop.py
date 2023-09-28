@@ -35,7 +35,7 @@ def plot_country(df: pd.DataFrame, country_name: str):
         # convert the population values into float
         populations = [convert_population(pop) for pop in values]
 
-        plt.plot(years, populations, label=country_name[0])
+        plt.plot(years, populations, label=country_name)
     except ValueError:
         print("Invalid years in csv!")
         sys.exit()
