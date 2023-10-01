@@ -2,9 +2,9 @@
 **A 7-days introduction to Python for data science**
 
 
-## Topics
-* Basic Python
-* numpy, pillow, pandas, matplotlib
-* Object Oriented Programming in Python
-* Data Oriented Design
-
+## Days
+* Day0: Starting
+* Day0: Array
+* Day0: Data Table
+* Day0: OOP
+* Day0: Dod (Data Oriented Design)
