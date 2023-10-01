@@ -13,9 +13,9 @@ class Student:
     """A dataclass that stores the information of a student"""
     name: str
     surname: str
-    active: bool = field(default=True)
+    active: bool = True
     login: str = field(init=False)
-    id: str = field(init=False)
+    id: str = field(init=False, default_factory=generate_id)
 
     def __post_init__(self):
         """
@@ -23,4 +23,3 @@ class Student:
             after the automatically generated __init__ method has run.
         """
         self.login = self.name[0] + self.surname
-        self.id = generate_id()
