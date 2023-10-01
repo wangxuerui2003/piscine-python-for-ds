@@ -1,7 +1,7 @@
 def square(x: int | float) -> int | float:
     """Square a number and return it"""
     if not isinstance(x, (int, float)):
-        print("Argument wrong data type ")
+        print("Argument wrong data type")
         return -1
 
     return x ** 2
@@ -10,7 +10,7 @@ def square(x: int | float) -> int | float:
 def pow(x: int | float) -> int | float:
     """Take the exponentiation of the argument itself and return it"""
     if not isinstance(x, (int, float)):
-        print("Argument wrong data type ")
+        print("Argument wrong data type")
         return -1
 
     return x ** x
@@ -19,7 +19,7 @@ def pow(x: int | float) -> int | float:
 def outer(x: int | float, function) -> object:
     """
         A closure that returns an inner function
-        that calls the function passed in with the argument x.
+        which saves the outer function's state
     """
 
     count = 0
