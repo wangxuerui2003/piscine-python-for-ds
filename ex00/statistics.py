@@ -40,5 +40,4 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
             print('std :', std)
 
         elif measure == 'var':
-            mean = sum(nums) / length
             print('var :', var)
