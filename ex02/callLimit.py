@@ -1,11 +1,18 @@
 def callLimit(limit: int):
-    """A decorator to limit the number of calls of a function"""
+    """
+        A function that returns a decorator
+        which limits the number of calls of a function to "limit".
+    """
     count = 0
 
     def callLimiter(function):
-        """middle function of the decorator"""
+        """The decorator"""
         def limited_function(*args: any, **kwds: any):
-            """inner function of the decorator"""
+            """
+                Inner function of the decorator
+                which takes in the arguments of the decorated function
+                and add more functionalities to it.
+            """
             nonlocal count
             count += 1
             if count > limit:
@@ -17,4 +24,4 @@ def callLimit(limit: int):
 
         return limited_function
 
-    return callLimiter
+    return callLimiter  # return the decorator
