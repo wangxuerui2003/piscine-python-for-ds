@@ -4,7 +4,7 @@
 
 ## Days
 * Day0: Starting
-* Day0: Array
-* Day0: Data Table
-* Day0: OOP
-* Day0: Dod (Data Oriented Design)
+* Day1: Array
+* Day2: Data Table
+* Day3: OOP
+* Day4: Dod (Data Oriented Design)
