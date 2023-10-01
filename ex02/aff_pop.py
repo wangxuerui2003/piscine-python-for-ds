@@ -6,6 +6,8 @@ from load_csv import load
 
 def convert_population(pop_str):
     """Convert string repr of population to numbers"""
+    if 'B' in pop_str:
+        return float(pop_str.replace('B', '')) * 1e9
     if 'M' in pop_str:
         return float(pop_str.replace('M', '')) * 1e6
     if 'k' in pop_str:
